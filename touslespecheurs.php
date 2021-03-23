@@ -55,7 +55,30 @@
 
     </style>
     </head>
+
+         <!-- Modal dialog -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-info">Détails sur pêcheur !</h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div> <!-- Modal dialog end-->
+
     <body>
+
         <?php require_once 'mn.php'; ?>
         <div class="page-header">
           <h2 style="text-align: center; margin-left: -50rem;">Les derniers pêcheurs enrollés !</h2>
@@ -102,7 +125,7 @@
                   <div class="form-group">
                     <div id="numcinlist" class="text-light text-info"></div>
                     <label for="numcin_txb"> 
-                        <button type="button" name="btn_submit" id="btn_submit" class="btn btn-primary">
+                        <button type="button" name="btn_submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
                           <i class="fa fa-fw fa-search"></i> Rechercher un pêcheur par CIN
                         </button>
                     </label>
@@ -110,9 +133,9 @@
                      
                   </div>   
 
-                  <div id="result_div">
-                    
-                  </div>
+                  <!-- 
+                    comment en attendant d'essayer le modal dialog
+                    <div id="result_div"></div> -->
             </div>
 
             
@@ -139,11 +162,7 @@
         </div>
 
         <?php endwhile ?>
-
-        <div class="container-fluid"></div>
     </div>
-      
-      <!--- delete statement will be here -->      
 
     <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -210,7 +229,12 @@
                   url: "searchengine.php",
                   data: "numcin_txb=" + numcin_txb,
                   success: function (data) {
-                    $('#result_div').html(data);
+
+                    // TODO ajouter data in Modal body en deux lignes
+                    $('.container-fluid').html(data);
+
+                    // comment en attendant d'essayer le modal dialog
+                    // $('#result_div').html(data);
                     $("#numcin_txb").val("");
                   }
                 });
@@ -225,6 +249,7 @@
             $("#numcin_txb").keyup(function (e) { 
               if (e.keyCode == 13) {
                 search();
+                $('#modelId').html('show');
               }
             });
           });

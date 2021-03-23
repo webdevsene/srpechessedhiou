@@ -57,10 +57,6 @@
     </style>
 </head>
 <body>
-
-    <div class="header mt-5 text-center">
-        <h2>Infos détails</h2>
-    </div>
     <!--<div class="list-group container mt-3" style="width: 35rem;">
       <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
         The current button
@@ -112,7 +108,7 @@
             if ($pound > 0) {
                 
                 $_output .= '
-                <div class="table-responsive" style="font-size: large;">
+                <div class="table-responsive" style="font-size: small;">
                     <table class="table table-bordered"';
                 while ($row = $stmt->fetch()) {
                   $_output .= '
@@ -188,8 +184,11 @@
 
                 echo $_output;
 
+                #header('location: touslespecheurs.php', true);
+
             }else{
-                echo "<p>Aucune correspondance pour ce numéro dans la base !</p>";
+                $_output .="<h2>Aucune correspondance pour ce numéro dans la base !</h2>";
+                echo $_output;
             }
             
 
