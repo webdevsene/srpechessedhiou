@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
@@ -11,7 +12,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     
-    <!-- important pour inclure le plugin jqueryUi -->
+    <!-- important pour inclure le plugin jqueryUi 
+    -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -96,20 +98,21 @@
              <!-- cin -->
             <div class="col-md-3"></div> 
             <div class="col-md-6" style="margin-top:20px; margin-bottom:20px;">
-                <form method="POST">
+                
                   <div class="form-group">
                     <div id="numcinlist" class="text-light text-info"></div>
-                    <label for=""> 
-                        <button type="submit" name="submit" id="submit" class="btn btn-primary">
+                    <label for="numcin_txb"> 
+                        <button type="button" name="btn_submit" id="btn_submit" class="btn btn-primary">
                           <i class="fa fa-fw fa-search"></i> Rechercher un pêcheur par CIN
                         </button>
-                                                                      
                     </label>
-                    <input type="text" class="form-control" name="numcin" id="numcin" placeholder="Search by Cin">               
+                    <input type="text" class="form-control" name="numcin_txb" id="numcin_txb" placeholder="Search by Cin">               
                      
-                    <div class="clearfix"></div>
+                  </div>   
+
+                  <div id="result_div">
+                    
                   </div>
-                </form>
             </div>
 
             
@@ -137,11 +140,10 @@
 
         <?php endwhile ?>
 
-        <div class="container-fluid"></div>       
+        <div class="container-fluid"></div>
     </div>
       
-      <!--- delete statement will be here -->
-      
+      <!--- delete statement will be here -->      
 
     <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -155,91 +157,77 @@
     </div>
   </footer><!-- End #footer -->
 
-  <!-- modal pour   afficher les resultats de recherche --> 
-  <!-- Button trigger modal -->
-  
-  
-  <!-- Modal -->
-  
-  <div id="dataModal" class="modal fade">  
-      <div class="modal-dialog">  
-           <div class="modal-content">  
-                <div class="modal-header">  
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                     <h4 class="modal-title">Infos details</h4>  
-                </div>  
-                <div class="modal-body" id="pecheur_detail">  
-                </div>  
-                <div class="modal-footer">  
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>  
-                </div>  
-           </div>  
-      </div>  
- </div>  
-
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) 
+        -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    
-        <!-- Latest compiled and minified Bootstrap JavaScript -->
+        <!-- Latest compiled and minified Bootstrap JavaScript 
+        -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <script>
-          // confirm record deletion
-          function delete_pecheur(id) {
-            var answer = confirm('Etes vous sûr de vouloir supprimer cet élément ? Attention cette Oppération est irreversible.');
-            if (answer) {
-              // if user clicked ok
-              // pass the id to process.php and execute the delete query
-              Window.location = 'process.php?id' + id;
-            }
-          }
-        </script>
 
         <script type="text/javascript">
           // <!--- Autocomplete textbox jquery ajax --->
-  $(document).ready(function(){
-      $("#numcin").on("keyup", function(){
-        var numcin = $(this).val();
-        if (numcin !== "") {
-          $.ajax({
-            url:"auto_search.php",
-            type:"POST",
-            cache:false,
-            data:{numcin:numcin},
-            success:function(data){
-              $("#numcinlist").html(data);
-              $("#numcinlist").fadeIn();
-            }  
+          $(document).ready(function(){
+              $("#numcin_txb").on("keyup", function(){
+                var numcin = $(this).val();
+                if (numcin !== "") {
+                  $.ajax({
+                    url:"auto_search.php",
+                    type:"POST",
+                    cache:false,
+                    data:{numcin_txb:numcin},
+                    success:function(data){
+                      $("#numcinlist").html(data);
+                      $("#numcinlist").fadeIn();
+                    }  
+                  });
+                }else{
+                  $("#numcinlist").html("");  
+                  $("#numcinlist").fadeOut();
+                }
+              });
+            
+              // click one particular numcin  it's fill in textbox
+              $(document).on("click","#nat", function(){
+                $('#numcin_txb').val($(this).text());
+                $('#numcinlist').fadeOut("fast");
+              });
+            
           });
-        }else{
-          $("#numcinlist").html("");  
-          $("#numcinlist").fadeOut();
-        }
-      });
+        </script>
 
-      // click one particular numcin  it's fill in textbox
-      $(document).on("click","#nat", function(){
-        $('#numcin').val($(this).text());
-        $('#numcinlist').fadeOut("fast");
-      });
+        <script>
 
-      $(document).on('click', '#submit', function () { 
-        var pdata = $(this).attr('id');
-        if (pdata != '') {
-          $.ajax({
-            url: 'searchengine.php',
-            method: 'POST',
-            cache: false,
-            data: {pdata: pdata},
-            success: function(data){
-              $('#pecheur_detail').html(data);  
-              $('#dataModal').modal("show");
-            }
+          $(document).ready(function () {
+            function search() {
+              var numcin_txb = $('#numcin_txb').val();
+
+              if (numcin_txb != "") {
+                $('#result_div').html("");
+
+                $.ajax({
+                  type: "post",
+                  url: "searchengine.php",
+                  data: "numcin_txb=" + numcin_txb,
+                  success: function (data) {
+                    $('#result_div').html(data);
+                    $("#numcin_txb").val("");
+                  }
+                });
+              }
+            } // function search
+
+            $("#btn_submit").click(function (e) { 
+              e.preventDefault();
+              search();
+            });
+
+            $("#numcin_txb").keyup(function (e) { 
+              if (e.keyCode == 13) {
+                search();
+              }
+            });
           });
-        }
-       });
-  });
         </script>
 
     </body>

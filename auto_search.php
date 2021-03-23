@@ -3,13 +3,13 @@
 <?php
         #autocomplete textbox jquery ajax in PHP
 
-        if (isset($_POST['numcin'])) {
+        if (isset($_POST['numcin_txb'])) {
 
             // traitement auto_search 
             
             $output = "";
             
-            $user_input = $_POST['numcin'];
+            $user_input = $_POST['numcin_txb'];
 
             $sqlquery = "SELECT num_cin FROM `tbl_pecheur` WHERE num_cin LIKE '%$user_input%'";
 
