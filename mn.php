@@ -1,4 +1,5 @@
-     <!-- Latest compiled and minified Bootstrap CSS -->
+     <!-- Latest compiled and minified Bootstrap CSS 
+     -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     
         <nav class="navbar navbar-default">

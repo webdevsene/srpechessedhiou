@@ -6,10 +6,9 @@
     <title>srpechessedhiou</title>
 
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <!-- Latest compiled and minified Bootstrap CSS -->
+    <!-- Latest compiled and minified Bootstrap CSS 
+    -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 
     <style>
@@ -57,6 +56,10 @@
         require_once 'process.php'; 
     ?>
 
+    <div class="page-header d-flex justify-content-center mt-3">
+        <h1 style="margin-left: 250px;"> Informations personnelles sur Pêcheur ! </h1>
+    </div>
+
     
 <?php  
         if (isset($_SESSION['message'])): ?>
@@ -69,12 +72,11 @@
         </div>
         <?php endif; ?>
 
-<div class="container d-flex justify-content-center" style="font-size: large;">
+<div class="container d-flex justify-content-center" style="width: 60rem; font-size: large;">
         <form action="process.php" method="POST" name="fpecheur" class="fpecheur">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             
-            <div class="row">
-                <div class="form-group col">
+                <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" class="form-control" 
                             value="<?php echo $nom; ?>" placeholder="Enter votre nom">
@@ -86,13 +88,10 @@
                     <input type="text" name="prenom" class="form-control" 
                             value="<?php echo $prenom; ?>" placeholder="Entrer votre prenom">
                 </div>
-            </div>
             
             <!-- raison sociale -->
 
-            <div class="row">
-
-                <div class="form-group col">
+                <div class="form-group">
                     <label for="raisonsociale">Raison sociale</label>
                     <input type="text" name="raisonsociale" class="form-control" 
                             value="<?php echo $raisonsociale; ?>" placeholder="donner votre profession ?" required>
@@ -104,7 +103,6 @@
                     <input type="text" name="profession" class="form-control" 
                             value="<?php echo $profession; ?>" placeholder="donner votre profession ?">
                 </div>
-            </div>
 
             <!-- Adresse -->
             <div class="form-group">
@@ -217,10 +215,13 @@
     </script>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS 
+    -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+     crossorigin="anonymous"></script>
     
     </body>
 </html>

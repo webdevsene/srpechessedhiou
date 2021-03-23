@@ -57,7 +57,8 @@
     </head>
 
          <!-- Modal dialog -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"         
+          aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -243,15 +244,17 @@
 
             $("#btn_submit").click(function (e) { 
               e.preventDefault();
-              search();
+              search(); 
+              
             });
 
             $("#numcin_txb").keyup(function (e) { 
               if (e.keyCode == 13) {
                 search();
-                $('#modelId').html('show');
+                $('#modelId').html('show'); 
               }
             });
+            
           });
         </script>
 
