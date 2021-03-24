@@ -84,7 +84,8 @@
          $pdo = new PDO("mysql:host=$_dbserver;dbname=$_dbname", $_dbuser, $_dbpw);
 
             
-           $q = $_POST['numcin_txb'];
+         // condition tertiaire
+           $q = isset($_post['numcin_txb']) ? $_POST['numcin_txb'] : ''; 
            
            // simple sql query that we will be running
            $_reqSql = "SELECT DISTINCT * FROM `tbl_pecheur`, `tbl_embarcation` 
@@ -162,11 +163,11 @@
                         </tr>
                         <tr>
                             <td><label>Largeur</label></td>
-                            <td>0.'. $row['largeur'] .'cm</td>
+                            <td>0.'. $row['largeur'] .'m</td>
                         </tr>
                         <tr>
                             <td><label>Creux</label></td>
-                            <td>0.'. $row['creux'] .'cm</td>
+                            <td>0.'. $row['creux'] .'m</td>
                         </tr>
                         <tr>
                             <td><label>Nb places autorisée s</label></td>
@@ -174,7 +175,7 @@
                         </tr>
                         <tr>
                             <td><label>Année de construction</label></td>
-                            <td>'. $row['construction_at'] .'</td>
+                            <td>'. date('Y M, d', strtotime($row['construction_at'])) .'</td>
                         </tr>
                         
                         ';

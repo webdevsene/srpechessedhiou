@@ -26,6 +26,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+      body {
+            font-family: "Open Sans", sans-serif;
+            color: #ffff;
+            background: url("assets/img/boatbg.jpg") top center no-repeat;
+            background-size: cover;
+            position: relative;
+            justify-content: center;
+        }
+  </style>
 </head>
 
 <body>
@@ -82,7 +92,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maundy-free-coming-soon-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">Myeva baromet (Etudes digitales)</a>
+        Designed by <a href="https://bootstrapmade.com/">myeva.co <small>Etudes digitales</small> </a>
       </div>
     </div>
   </footer><!-- End #footer -->

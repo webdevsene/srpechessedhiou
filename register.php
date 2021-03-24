@@ -15,7 +15,7 @@
         body {
             font-family: "Open Sans", sans-serif;
             color: #fff;
-            background: url("assets/img/bg.jpg") top center no-repeat;
+            background: url("assets/img/boatbg.jpg") top center no-repeat;
             background-size: cover;
             position: relative;
             justify-content: center;

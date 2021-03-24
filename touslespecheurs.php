@@ -21,7 +21,7 @@
         body {
             font-family: "Open Sans", sans-serif;
             color: #ffff;
-            background: url("assets/img/bg.jpg") top center no-repeat;
+            background: url("assets/img/boatbg.jpg") top center no-repeat;
             background-size: cover;
             position: relative;
             justify-content: center;
@@ -117,17 +117,18 @@
         }
     ?>
 
-    <div class="container d-flex justify-content-right" style="position: relative; width: 100rem;">
+    <div class="container justify-content-right" style="position: relative; width: 100rem;">
 
-             <!-- cin -->
+             <!-- cin 
             <div class="col-md-3"></div> 
-            <div class="col-md-6" style="margin-top:20px; margin-bottom:20px;">
+             -->
+            <div class="" style="width: 35rem; margin-left:210px; margin-bottom:20px; margin-top: 20px;">
                 
                   <div class="form-group">
-                    <div id="numcinlist" class="text-light text-info"></div>
+                    <div id="numcinlist" class="text-light text-danger" style="font-size: large;"></div>
                     <label for="numcin_txb"> 
                         <button type="button" name="btn_submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
-                          <i class="fa fa-fw fa-search"></i> Rechercher un pêcheur par CIN
+                          <i class="fa fa-fw fa-search"></i> Rechercher un pêcheur par CIN /NIN
                         </button>
                     </label>
                     <input type="text" class="form-control" name="numcin_txb" id="numcin_txb" placeholder="Search by Cin">               
@@ -172,7 +173,7 @@
         &copy; Copyright <strong><span>srpechessedhiou</span></strong>. Tous droits réservés !
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/"><strong>myeva-baromet </strong> <small> Etudes digitales</small></a>
+        Designed by <a href="https://bootstrapmade.com/"><strong>myeva.co </strong> <small> Etudes digitales</small></a>
       </div>
     </div>
   </footer><!-- End #footer -->
