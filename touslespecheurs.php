@@ -223,7 +223,7 @@
             function search() {
               var numcin_txb = $('#numcin_txb').val();
 
-              if (numcin_txb != "") {
+              if (numcin_txb !== "") {
                 $('#result_div').html("");
 
                 $.ajax({
