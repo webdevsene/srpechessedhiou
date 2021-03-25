@@ -278,7 +278,7 @@
         &copy; Copyright <strong><span>srpechessedhiou</span></strong>. Tous droits réservés !
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/"><strong>omalik-survey</strong> <small> Etudes digitales</small></a>
+        Designed by <a href="https://bootstrapmade.com/"><strong>myeva.co</strong> <small> Etudes digitales</small></a>
       </div>
     </div>
   </footer><!-- End #footer -->

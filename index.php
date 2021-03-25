@@ -26,13 +26,37 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+    <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- MDB -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- MDB -->
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+  ></script>
+
+
   <style>
       body {
             font-family: "Open Sans", sans-serif;
             color: #ffff;
             background: url("assets/img/boatbg.jpg") top center no-repeat;
             background-size: cover;
-            position: relative;
+            position: ab;
             justify-content: center;
         }
   </style>
@@ -40,12 +64,33 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex flex-column align-items-center">
-      javascript animation
-    </div>
-  </header><!-- End #header -->
+      <div id="carouselId" class="carousel slide" data-mdb-ride="carousel" style="padding-left: 5rem; padding-right: 5rem;">          
+            <div class="carousel-indicators">
+              <button type="button" data-mdb-target="#carouselId" data-mdb-slide-to="0" class="active" 
+                      aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-mdb-target="#carouselId" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-mdb-target="#carouselId" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-mdb-interval="2000">
+                <img src="assets/img/ghana.jpg" alt="First slide" class="d-block w-100" height="440">
+              </div>
+              <div class="carousel-item" data-mdb-interval="2000">
+                <img src="assets/img/fish.jpg" alt="Second slide" class="d-block w-100" height="440">
+              </div>
+              <div class="carousel-item" data-mdb-interval="2000">
+                <img src="assets/img/food.jpg" alt="Third slide" class="d-block w-100" height="440">
+              </div>
+            </div>
+            <button class="carousel-control-prev" data-mdb-target="#carouselId" type="button" role="button" data-mdb-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-mdb-target="#carouselId" type="button" role="button" data-mdb-slide="next">
+              <span class="visually-hidden">Next</span>
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+      </div>
 
   <main id="main">
 
@@ -102,6 +147,7 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
