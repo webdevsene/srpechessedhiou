@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <!--
+    -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
@@ -83,8 +86,22 @@
         <?php require_once 'mn.php'; ?>
         <div class="page-header">
           <h2 style="text-align: center; margin-left: -50rem;">Les derniers pêcheurs enrollés !</h2>
-        </div>       
+        </div>  
+
+         <?php 
+         
+            #require_once 'process.php'; 
+            if (isset($_SESSION['message'])): ?>
+              <div class="alert alert-<?=$_SESSION['msg_type']?>" class="form-group" role="alert" data-auto-dismiss="5000">
+                  <i class='fas fa-check'></i>
+                  <?php 
+                      echo $_SESSION['message'];
+                      unset($_SESSION['message']);
+                      ?>
+            </div>
+        <?php endif; ?>     
           
+    
     <?php          
         # $mysqli = new  mysqli('localhost', 'root', '', 'srpechessedhiou') or die($mysqli_error);
         # $result = $mysqli->query("SELECT * FROM `tbl_pecheur` ORDER BY id DESC LIMIT 10") or die($mysqli->error);
@@ -127,7 +144,7 @@
                   <div class="form-group">
                     <div id="numcinlist" class="text-light text-danger" style="font-size: large;"></div>
                     <label for="numcin_txb"> 
-                        <button type="button" name="btn_submit" id="btn_submit" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
+                        <button type="button" name="btn_submit" id="btn_submit" class="btn btn-info" data-toggle="modal" data-target="#modelId">
                           <i class="fa fa-fw fa-search"></i> Rechercher un pêcheur par CIN /NIN
                         </button>
                     </label>
@@ -149,7 +166,7 @@
           <div class="card-body">            
               <ul class="list-group list-group-flush" id="elt">
                 <li class="list-group-item"><span class="fa"><i class="fa fa-user-circle" aria-hidden="true"></i> <?php echo $row['nom']. " " . $row['prenom'] ?></span></li>
-                <li class="list-group-item"><span class="fa"><i class="fas fa-"></i><?php  echo $row['num_cin'] . " "?></span></li>
+                <li class="list-group-item"><span class="fa"><i class="fas fa-credit-card"></i> <?php  echo $row['num_cin'] . " "?></span></li>
                 <li class="list-group-item"><span class="fa"><i class="fas fa-map-marked-alt"></i></span>  <?php echo $row['adresse'] ; ?></li>
                 <li class="list-group-item"><span class="fa"><i class="fa fa-phone" aria-hidden="true"></i></span>
                     <?php echo $row['num_tel'] ; ?></li>
@@ -185,7 +202,7 @@
         <!-- Latest compiled and minified Bootstrap JavaScript 
         -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
         <script type="text/javascript">
           // <!--- Autocomplete textbox jquery ajax --->
           $(document).ready(function(){

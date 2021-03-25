@@ -64,7 +64,7 @@
 
 <body>
 
-      <div id="carouselId" class="carousel slide" data-mdb-ride="carousel" style="padding-left: 5rem; padding-right: 5rem;">          
+      <div id="carouselId" class="carousel slide" data-mdb-ride="carousel">          
             <div class="carousel-indicators">
               <button type="button" data-mdb-target="#carouselId" data-mdb-slide-to="0" class="active" 
                       aria-current="true" aria-label="Slide 1"></button>
