@@ -26,7 +26,7 @@
                 }
             }
             else {
-                $output .= '<li>Ce numero CIN n'."'".'existe pas dans la base</li>';
+                $output .= '<li>Aucune correspondance pour ce numéro dans le système !</li>';
             }
 
             $output .= '</ul>';

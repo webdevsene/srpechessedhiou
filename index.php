@@ -76,10 +76,10 @@
                 <img src="assets/img/ghana.jpg" alt="First slide" class="d-block w-100" height="440">
               </div>
               <div class="carousel-item" data-mdb-interval="2000">
-                <img src="assets/img/fish.jpg" alt="Second slide" class="d-block w-100" height="440">
+                <img src="assets/img/crvett.jpeg" alt="Second slide" class="d-block w-15" height="440" style="padding-left: 35rem;">
               </div>
               <div class="carousel-item" data-mdb-interval="2000">
-                <img src="assets/img/food.jpg" alt="Third slide" class="d-block w-100" height="440">
+                <img src="assets/img/tilapia.jpeg" alt="Third slide" class="d-block w-15" height="440" style="padding-left: 23rem;">
               </div>
             </div>
             <button class="carousel-control-prev" data-mdb-target="#carouselId" type="button" role="button" data-mdb-slide="prev">

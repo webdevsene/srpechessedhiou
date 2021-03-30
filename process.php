@@ -90,6 +90,8 @@
 
         header('location: register.php');
 
+        
+
     }
 
     /**
@@ -100,19 +102,22 @@
      * @Date: 2021-03-16 18:06:17 
      * @Desc:  
      */
+    session_unset(); // free all session var
     if (isset($_GET['id'])) { 
         # code...
         $id = $_GET['id'];  #recupere l'id de l'element qui doit être supprimé
 
         // supprimer dabord les enregistrement liées à la table embarcation
         $mysqli->query("DELETE FROM `tbl_embarcation` WHERE tbl_embarcation.pecheur_id='$id'") or die($mysqli->error);
+        $_exec = $mysqli->query("DELETE FROM `tbl_pecheur` WHERE id='$id'") or die($mysqli->error) ;
 
-        $mysqli->query("DELETE FROM `tbl_pecheur` WHERE id='$id'") or die($mysqli->error) ;
-        
-        $_SESSION['message'] = "Ce pêcheur a été définitivement supprimé de la base !";
-        $_SESSION['msg_type'] = "danger";
-        
-        header('location: touslespecheurs.php');
+        if ($_exec) {            
+            
+            $_SESSION['message'] = "Ce pêcheur a été définitivement supprimé de la base !";
+            $_SESSION['msg_type'] = "danger";
+            
+            header('location: touslespecheurs.php');
+        }
     }
 
 

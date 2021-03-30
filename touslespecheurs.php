@@ -92,14 +92,14 @@
          
             #require_once 'process.php'; 
             if (isset($_SESSION['message'])): ?>
-              <div class="alert alert-<?=$_SESSION['msg_type']?>" class="form-group" role="alert" data-auto-dismiss="5000">
+              <div class="alert alert-<?=$_SESSION['msg_type']?>" class="form-group" role="alert" data-auto-dismiss="50">
                   <i class='fas fa-check'></i>
                   <?php 
                       echo $_SESSION['message'];
                       unset($_SESSION['message']);
                       ?>
             </div>
-        <?php endif; ?>     
+        <?php endif; ?>
           
     
     <?php          

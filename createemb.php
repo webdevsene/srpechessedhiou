@@ -244,7 +244,7 @@
                     <?php 
                         require_once 'process.php'; // database cnx using pdo
 
-                        $sql = "SELECT id, nom, prenom FROM `tbl_pecheur` order by nom"; // requette sql
+                        $sql = "SELECT id, nom, prenom FROM `tbl_pecheur` order by id DESC LIMIT 5"; // requette sql
 
                         // Get le resultat de la requette
                         $result = $mysqli->query($sql);
@@ -301,7 +301,7 @@
 
                 $(this).remove();
             });
-        }, 1000);
+        }, 2000);
  
     });
 </script>
