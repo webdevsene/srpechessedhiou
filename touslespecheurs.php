@@ -86,21 +86,7 @@
         <?php require_once 'mn.php'; ?>
         <div class="page-header">
           <h2 style="text-align: center; margin-left: -50rem;">Les derniers pêcheurs enrollés !</h2>
-        </div>  
-
-         <?php 
-         
-            #require_once 'process.php'; 
-            if (isset($_SESSION['message'])): ?>
-              <div class="alert alert-<?=$_SESSION['msg_type']?>" class="form-group" role="alert" data-auto-dismiss="50">
-                  <i class='fas fa-check'></i>
-                  <?php 
-                      echo $_SESSION['message'];
-                      unset($_SESSION['message']);
-                      ?>
-            </div>
-        <?php endif; ?>
-          
+        </div>
     
     <?php          
         # $mysqli = new  mysqli('localhost', 'root', '', 'srpechessedhiou') or die($mysqli_error);
@@ -174,7 +160,7 @@
               </ul>
           </div>
           <div class="card-body">
-            <a href="process.php?id=<?php echo $row['id'] ; ?>" class="btn btn-danger btn-sm remove">Supprimer</a> |
+            <a id="<?php echo $row['id']; ?>" href="process.php?id=<?php echo $row['id'] ; ?>" class="btn btn-danger btn-sm remove">Supprimer</a> |
             <a href="touslespecheurs.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Mettre à jour</a>
           </div>
               <hr>
@@ -274,6 +260,30 @@
             });
             
           });
+        </script>
+
+        <script> 
+          
+          // script pour gerer la suppresssion d'un element
+          $(".remove").click(function(){
+            var id = $(this).parents("a").attr("id");
+            if(confirm('Etes-vous sûr de vouloir supprimer cet élément ? Cette oppération est irreversible !')) {
+                $.ajax({
+                    url: 'process.php',
+                    type: 'GET',
+                    data: "id=" + id,
+                    error: function() {
+                      alert('Erreur lors de la supression. Si ça persiste veuillez contacter le Webmaster !');
+                    },
+                    success: function(data) {
+                        $("#" + id).remove();
+                        alert("L'oppération a réussi avec succès !.");  
+                    }
+                });
+            } else{
+              Window.location.href = "touslespecheurs.php";
+            }
+        });
         </script>
 
     </body>
