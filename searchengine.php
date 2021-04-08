@@ -10,9 +10,8 @@
 
          $pdo = new PDO("mysql:host=$_dbserver;dbname=$_dbname", $_dbuser, $_dbpw);
 
-            
          // condition tertiaire
-         //  $q = isset($_post['numcin_txb']) ? $_POST['numcin_txb'] : '';
+         //  TODO $q = isset($_post['numcin_txb']) ? $_POST['numcin_txb'] : '';
          
          $q = $_POST['numcin_txb'] ;
            

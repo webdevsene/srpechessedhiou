@@ -9,9 +9,7 @@
 <body>
     <!-- <div class="container d-flex justify-content-center">
         <h1 style="margin-top: 50px; padding-bottom: 10px;"> Informations personnelles sur Pêcheur ! </h1>
-    </div> -->
-
-    
+    </div> -->    
 </body>
 </html>
 
@@ -40,11 +38,6 @@
     $issaveDisabled= false;
 
     if (isset($_POST['save'])) {
-        # code...
-        
-        // declarer une var datetimeNow
-        # test var dump
-        #var_dump($_POST);
 
         $nom = mysqli_real_escape_string($mysqli, $_POST['nom']);
 
@@ -67,8 +60,7 @@
         #$numcin = $_POST['numcin']; // on recupere seulement la saisie sans transformer la chaine
         $numtel = mysqli_real_escape_string($mysqli, $_POST['numtel']);
 
-        $dateTimeNow = date('Y-m-d H:i:s'); #la date d'enrollement du pêcheur courant
-        
+        $dateTimeNow = date('Y-m-d H:i:s'); #la date d'enrollement du pêcheur courant        
 
         $mysqli->query("INSERT INTO `tbl_pecheur` (
             nom,
@@ -91,13 +83,10 @@
         header('location: register.php');
     }
 
-    /**
-     * traitement du btn delete 
-     */
     /** 
      * @Author: mayeva.co
      * @Date: 2021-03-16 18:06:17 
-     * @Desc:  
+     * @Desc: traitement du btn delete
      */
     if (isset($_GET['id'])) { 
         # code...
@@ -114,7 +103,6 @@
             # header('location: touslespecheurs.php');
         }
     }
-
 
     /** triatement du btn edit */
     

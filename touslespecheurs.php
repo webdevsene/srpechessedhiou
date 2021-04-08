@@ -4,7 +4,6 @@
     <!--
     -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
@@ -13,8 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-    
+        
     <!-- important pour inclure le plugin jqueryUi 
     -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -88,15 +86,8 @@
           <h2 style="text-align: center; margin-left: -50rem;">Les derniers pêcheurs enrollés !</h2>
         </div>
     
-    <?php          
-        # $mysqli = new  mysqli('localhost', 'root', '', 'srpechessedhiou') or die($mysqli_error);
-        # $result = $mysqli->query("SELECT * FROM `tbl_pecheur` ORDER BY id DESC LIMIT 10") or die($mysqli->error);
+    <?php
 
-        #pre_r($result);
-        #pre_r($result->fetch_assoc());
-        #pre_r($result->fetch_assoc());
-
-        // used to connect to the database
         $host = "localhost";
         $db_name = "srpechessedhiou";
         $username = "root";
@@ -121,7 +112,6 @@
     ?>
 
     <div class="container justify-content-right" style="position: relative; width: 100rem;">
-
              <!-- cin 
             <div class="col-md-3"></div> 
              -->
@@ -137,19 +127,11 @@
                     <input type="text" class="form-control" name="numcin_txb" id="numcin_txb" placeholder="Search by Cin">               
                      
                   </div>   
-
-                  <!-- 
-                    comment en attendant d'essayer le modal dialog
-                    <div id="result_div"></div> -->
             </div>
-
-            
 
       <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>    <!-- recuperer la liste des pecheurs avec une boocle while  -->
         <div class="card col-md-3" style="width: 32rem; display: inline-block; font-size: large;">
-          
-          <!--<img class="card-img-top" src="https://via.placeholder.com/290x150" alt="Card image cap"> -->
-          <div class="card-body">            
+          <div class="card-body">
               <ul class="list-group list-group-flush" id="elt">
                 <li class="list-group-item"><span class="fa"><i class="fa fa-user-circle" aria-hidden="true"></i> <?php echo $row['nom']. " " . $row['prenom'] ?></span></li>
                 <li class="list-group-item"><span class="fa"><i class="fas fa-credit-card"></i> <?php  echo $row['num_cin'] . " "?></span></li>
@@ -165,7 +147,6 @@
           </div>
               <hr>
         </div>
-
         <?php endwhile ?>
     </div>
 
@@ -221,7 +202,7 @@
         </script>
 
         <script>
-
+          // searchengine script Ajax jquery
           $(document).ready(function () {
             function search() {
               var numcin_txb = $('#numcin_txb').val();
@@ -271,6 +252,7 @@
                 $.ajax({
                     url: 'process.php',
                     type: 'GET',
+                    cache: false,
                     data: "id=" + id,
                     error: function() {
                       alert('Erreur lors de la supression. Si ça persiste veuillez contacter le Webmaster !');

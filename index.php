@@ -49,7 +49,6 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
   ></script>
 
-
   <style>
       body {
             font-family: "Open Sans", sans-serif;
@@ -106,9 +105,11 @@
 
         <div class="row mt-2">
           <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="touslespecheurs.php">Gestion des Pêcheurs</a></h4>
-            <p class="description">Module Enrôlement et contrôle des actes de délivrances permis.</p>
+            <a href="touslespecheurs.php">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title">Gestion des Pêcheurs</h4>
+              <p class="description">Module Enrôlement et contrôle des actes de délivrances permis.</p>
+            </a>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
             <div class="icon"><i class="bi bi-bar-chart"></i></div>
@@ -123,7 +124,6 @@
         </div>
 
       </div>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -147,7 +147,6 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
