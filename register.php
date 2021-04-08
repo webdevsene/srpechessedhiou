@@ -94,30 +94,29 @@
                 <div class="form-group">
                     <label for="raisonsociale">Raison sociale</label>
                     <input type="text" name="raisonsociale" class="form-control" 
-                            value="<?php echo $raisonsociale; ?>" placeholder="donner votre profession ?" required>
+                            value="<?php echo $raisonsociale; ?>" placeholder="Entrer votre profession ?" required>
                 </div>
         
                 <!-- profession -->
                 <div class="form-group">
                     <label for="profession">Profession</label>
                     <input type="text" name="profession" class="form-control" 
-                            value="<?php echo $profession; ?>" placeholder="donner votre profession ?">
+                            value="<?php echo $profession; ?>" placeholder="Répéter votre profession ?">
                 </div>
 
             <!-- Adresse -->
             <div class="form-group">
                 <label for="">Adresse</label>
                 <input type="text" name="adresse" class="form-control" 
-                        value="<?php echo $adresse; ?>" placeholder="quelle est votre adresse ?">
+                        value="<?php echo $adresse; ?>" placeholder="Entrer votre adresse ?">
             </div>
 
             <!-- port d'attache -->
             <div class="form-group">
                 <label for="">Port d'Attache</label>
                 <input type="text" name="portattache" class="form-control" 
-                        value="<?php echo $portattache; ?>" placeholder="quel est votre port d'attache ?">
+                        value="<?php echo $portattache; ?>" placeholder="Entrer votre port d'attache ?">
             </div>
-
             
             <!-- departement -->
             <div class="form-group">
@@ -154,21 +153,19 @@
                     <option name="autre" value="autre">Autre</option>
                 </select>
             </div>
-
             
             <!-- cin -->
             <div class="form-group">
                 <label for="">CIN</label>
                 <input type="text" name="numcin" class="form-control" 
-                        placeholder="Enter your cin" pattern="[0-9]{13}" maxlength="13" required >
+                        placeholder="Entrer votre cin" pattern="[0-9]{13}" maxlength="13" required >
             </div>
-
             
             <!-- num tel -->
             <div class="form-group">
                 <label for="">Telephone</label>
                 <input type="text" name="numtel" class="form-control" 
-                        placeholder="Enter your phone number" pattern="[0-9]{12}"
+                        placeholder="Entrer votre téléphone" pattern="[0-9]{12}"
                         maxlength="12" >
             </div>
 

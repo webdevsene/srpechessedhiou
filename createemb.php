@@ -9,8 +9,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
     />
-    
-     <!-- <meta http-equiv="Refresh" content="15; url=createemb.php"> refresh page toutes les 15 econdes redirection apres traitement stmt -->
 
     <style>
         body {
@@ -31,82 +29,62 @@
           color: #fff;
           font-size: 14px;
           position: relative;
-        }
-        
+        }        
         #footer .copyright {
           text-align: center;
-        }
-        
+        }        
         #footer .credits {
           padding-top: 10px;
           text-align: center;
           font-size: 13px;
           color: #fff;
-        }
-        
+        }        
         #footer .credits a {
           color: #36d8c3;
         }
 
     </style>
           
-        </head>
-        <body>
-            
+</head>
+<body>
     <!--Navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">srpechessedhiou</a>
-        
+            <a class="navbar-brand" href="#">srpechessedhiou</a>        
         </div>
-
         <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav"> 
-            <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
-            <li><a href="touslespecheurs.php">Tous les pêcheurs </a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Enrollement <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-            <li><a href="register.php">Enroller un pêcheur</a></li>
-            <li role="separator" class="divider"></li>            
-            <li><a href="createemb.php">Configurer une embarcation</a></li>
-            <li role="separator" class="divider"></li>            
+            <ul class="nav navbar-nav"> 
+                <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
+                <li><a href="touslespecheurs.php">Tous les pêcheurs </a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Enrollement <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                <li><a href="register.php">Enroller un pêcheur</a></li>
+                <li role="separator" class="divider"></li>            
+                <li><a href="createemb.php">Configurer une embarcation</a></li>
+                <li role="separator" class="divider"></li>            
 
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-          </ul>
-            </li>
-        </ul>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+              </ul>
+                </li>
+            </ul>
         </div>
-
       </div>
-    </nav>
-    
-    <!--/.Navbar -->
-
-<div style="height: 40px"></div>
+    </nav> <!--/.Navbar -->
+    <div style="height: 40px"></div>
   
     <!-- container -->
-<div class="container">
-   
+    <div class="container">   
         <div class="page-header">
             <h1>Informations sur votre embarcation !</h1>
         </div>
-      
-    <!-- html form to create product will be here -->
-
-    <!-- PHP insert code will be here -->
 
     <?php
-        if($_POST){
-            
-
-            // var_dump(json_decode($_POST, true)); // test contenu de $_POST
-            //var_dump($_POST);
- 
+        if($_POST){ 
             // include database connection
             include 'process.php';
        
@@ -123,8 +101,6 @@
                                                          capacite_places,
                                                          construction_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";     
                 // prepare query for execution
-                // $stmt = $mysqli->prepare($query);
-
                 $stmt = $mysqli->prepare($query);
        
                 // posted values
@@ -149,8 +125,6 @@
                 $construction_at=htmlspecialchars(strip_tags($_POST['anneedeconstruction']));
        
                 // bind the parameters
-                # $stmt->bind_param(':pecheur_id', $pecheur_id, PDO::PARAM_INT);
-
                 $stmt->bind_param('issssiiiis', $pecheur_id, $num_immatriculation, $nom_embarcation, $type_materiaux, $systeme_mecanique, $longueur, $largeur, $creux, $capacite_places, $construction_at);
                
                 // Execute the query
@@ -164,15 +138,13 @@
                 }else{
                     echo "<div class='alert alert-danger'>Unable : l'enregistrement a échoué.</div>";
                 }
-                    
             }
-
             // show error
             catch(PDOException $exception){
                 die('ERROR: ' . $exception->getMessage());
             }
         }
-?>
+    ?>
 
 <!-- html form here where the product information will be entered -->
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -225,7 +197,6 @@
             <td><input  type="number" step="1" pattern="\d+" name='creux' id="creux" class='form-control'></td>
         </tr>
 
-
         <tr>
             <td>Nombre de personnes à bord</td>
             <td><input  type="number" step="1" pattern="\d+" name='nbperson' id="nbperson" maxlength="1" class='form-control' required></td>
@@ -249,8 +220,7 @@
                         // Get le resultat de la requette
                         $result = $mysqli->query($sql);
 
-                        while ($row = $result->fetch_assoc()) {
-                            
+                        while ($row = $result->fetch_assoc()) {                            
                             // afficher en tant que html option select
                             echo "<option value='". $row['id'] ."'>" .$row['nom'] ." " .$row['prenom'] ."</option>" ;
                          }
@@ -263,7 +233,7 @@
             <td></td>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
-                <a href='register.php' class='btn btn-danger'>Back to read products</a>
+                <a href='register.php' class='btn btn-danger'>Revenir sur la liste des pêcheurs</a>
             </td>
         </tr>
     </table>
@@ -282,8 +252,6 @@
       </div>
     </div>
   </footer><!-- End #footer -->
-
-
       
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -308,21 +276,3 @@
   
 </body>
 </html>
-
-
-<?php
-    // used to connect to the database
-    $host = "localhost";
-    $db_name = "srpechessedhiou";
-    $username = "root";
-    $password = "";
-    
-    try {
-        $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
-    }
-    
-    // show error
-    catch(PDOException $exception){
-        echo "Connection error: " . $exception->getMessage();
-    }
-?>
