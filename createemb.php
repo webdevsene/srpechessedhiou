@@ -233,7 +233,7 @@
             <td></td>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
-                <a href='register.php' class='btn btn-danger'>Revenir sur la liste des pêcheurs</a>
+                <a href='touslespecheurs.php' class='btn btn-info'>Revenir sur la liste des pêcheurs</a>
             </td>
         </tr>
     </table>
@@ -243,15 +243,15 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>srpechessedhiou</span></strong>. Tous droits réservés !
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/"><strong>myeva.co</strong> <small> Etudes digitales</small></a>
-      </div>
-    </div>
-  </footer><!-- End #footer -->
+        <div class="container">
+          <div class="copyright">
+            &copy; Copyright <strong><span>srpechessedhiou</span></strong>. Tous droits réservés !
+          </div>
+          <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/"><strong>myeva.co</strong> <small> Etudes digitales</small></a>
+          </div>
+        </div>
+    </footer><!-- End #footer -->
       
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
