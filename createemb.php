@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 <head>
     <title>srpechesedhiou - Gestion des embarcations</title>
       
@@ -215,12 +215,13 @@
                     <?php 
                         require_once 'process.php'; // database cnx using pdo
 
-                        $sql = "SELECT id, nom, prenom FROM `tbl_pecheur` order by id DESC LIMIT 5"; // requette sql
-
+                        # $sql = "SELECT id, nom, prenom FROM `tbl_pecheur` order by id DESC LIMIT 0,1"; // requette sql
+                        $sql = "SELECT id, nom, prenom FROM `tbl_pecheur` WHERE id = (SELECT MAX(id) FROM `tbl_pecheur`)";
+                        
                         // Get le resultat de la requette
                         $result = $mysqli->query($sql);
 
-                        while ($row = $result->fetch_assoc()) {                            
+                        while ($row = $result->fetch_assoc()) {
                             // afficher en tant que html option select
                             echo "<option value='". $row['id'] ."'>" .$row['nom'] ." " .$row['prenom'] ."</option>" ;
                          }

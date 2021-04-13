@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--
-    
+    <!--    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
@@ -16,13 +15,14 @@
     
     <link rel="stylesheet" 
     href="https://bootswatch.com/4/litera/bootstrap.min.css">
+    
 
     <!-- Version développement. Celle-ci donne des avertissements utiles sur la console -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Les statistiques </title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <a class="navbar-brand" href="#">S.R pêche-sedhiou</a>
     
       <div class="collapse navbar-collapse" id="navbarColor01">
@@ -34,20 +34,21 @@
             <a class="nav-link" href="#">Caractéristiques</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu déroulant</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">action</a>
-              <a class="dropdown-item" href="#">Une autre action</a>
-              <a class="dropdown-item" href="#">Quelque chose d'autre ici</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Lien séparé</a>
-            </div>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
+            aria-haspopup="true" aria-expanded="false">Menu déroulant</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">action</a></li>
+              <li><a href="#">Une autre action</a></li>
+              <li><a href="#">Quelque chose d'autre ici</a></li>
+              <li class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Lien séparé</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div class="" id="app-2">
+    <div class="container mt-5" id="app-2">
         <span v-bind:title="message">
           Passez votre souris sur moi pendant quelques secondes
           pour voir mon titre lié dynamiquement !
