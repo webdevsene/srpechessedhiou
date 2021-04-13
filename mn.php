@@ -1,6 +1,7 @@
      <!-- Latest compiled and minified Bootstrap CSS 
      -->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+     <link rel="stylesheet" 
+     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     
         <nav class="navbar navbar-default">
           <div class="container">
@@ -14,7 +15,8 @@
                 <li class="active"><a href="index.php">Accueil <span class="sr-only">(current)</span></a></li>
                 <li><a href="touslespecheurs.php">Tous les pêcheurs </a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Enrollement <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                    aria-haspopup="true" aria-expanded="false">Enrollement <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                 <li><a href="register.php">Enroller un pêcheur</a></li>
                 <li role="separator" class="divider"></li>            
