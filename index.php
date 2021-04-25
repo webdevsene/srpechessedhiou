@@ -107,13 +107,15 @@
           <div class="col-lg-4 col-md-6 icon-box">
             <a href="touslespecheurs.php">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
+            </a>
               <h4 class="title">Gestion des Pêcheurs</h4>
               <p class="description">Module Enrôlement et contrôle des actes de délivrances permis.</p>
-            </a>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Efforts de Pêche</a></h4>
+            <a href="efforts/index.php">
+              <div class="icon"><i class="bi bi-bar-chart"></i></div>
+            </a>
+            <h4 class="title"><a href="efforts/index.php">Efforts de Pêche</a></h4>
             <p class="description">Module de Suivi-évaluation de l'activité de pêche <br> Sédhiou | Goudomp | Bounkiling</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box">
