@@ -23,12 +23,12 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-      <a class="navbar-brand" href="#">S.R pêche-sedhiou</a>
+      <a class="navbar-brand" href="../index.php">S.R pêche-sedhiou</a>
     
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Accueil</a>
+            <a class="nav-link" href="../index.php">Accueil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Caractéristiques</a>
